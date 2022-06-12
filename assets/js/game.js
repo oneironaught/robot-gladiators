@@ -14,7 +14,6 @@ console.log(enemyNames[3]);
 
 // fight function (now with parameter for enemy's name)
 var fight = function(enemyName) {
-  // fight function statements
   while (playerHealth > 0 && enemyHealth > 0) {
     // ask player if they'd like to fight or run
     var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
@@ -62,13 +61,13 @@ var fight = function(enemyName) {
     // check player's health
     if (playerHealth <= 0) {
       window.alert(playerName + ' has died!');
-      // leave while() loop if player is dead
+      // leave while() loop if player is dead *the break causes the fight to end
       break;
     } else {
       window.alert(playerName + ' still has ' + playerHealth + ' health left.');
     }
   } // end of while loop
-} // end of fight function
+}; // end of fight function
 
 // fight each enemy-robot by looping over them and fighting them one at a time
 for (var i = 0; i < enemyNames.length; i++) {
@@ -79,12 +78,6 @@ for (var i = 0; i < enemyNames.length; i++) {
 
     // pick new enemy to fight based on the index of the enemyNames array
     var pickedEnemyName = enemyNames[i];
-    console.log(enemyNames.length);
-    for(var i = 0; i < enemyNames.length; i++) {
-      console.log(enemyNames[i]);
-      console.log(i);
-      console.log(enemyNames[i] + " is at " + i + " index");
-    } 
 
     // reset enemyHealth before starting new fight
     enemyHealth = 50;
